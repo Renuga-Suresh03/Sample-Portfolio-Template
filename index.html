@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        .header {
+            background-color: #6705a8;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        .contact-info h1 {
+            margin: 0;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p i {
+            margin-right: 10px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            overflow: hidden;
+            padding: 0;
+            background-color: #6705a8;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #6705a8;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* About Me Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            width: 300px;
+            height: 300px;
+            margin-left: 70px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+           
+        }
+
+        .about-content {
+            margin-left: 30px;
+        }
+
+        .about-content h2 {
+            color: #6705a8;
+            font-size: 36px;
+        }
+
+        .about-content p {
+            color: black;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 100px;
+        }
+
+        .skill-box {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .skill-box img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .skill-box h3 {
+            margin: 10px 0 5px;
+            font-size: 14px;
+        }
+
+        .skill-box p {
+            font-size: 12px;
+            color: gray;
+        }
+
+        /* Projects Section */
+        .project-box {
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 10px;
+            margin-left: 50px;
+            width: 1150px;
+        }
+
+        .project-box h3 {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            
+        }
+
+        /* Recommendations Section */
+        .recommendations-container {
+            
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .recommendation-box {
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            width: 350px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            margin-right: 10px;
+        }
+
+        /* Recommendation Form */
+        .form-container {
+            
+            border-radius: 5px;
+            padding: 20px;
+            width: 500px;
+            align-items: center;
+            margin-left: 350px;
+            margin-right: 100px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #6705a8;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: white;
+            color:#6705a8;
+            border: 2px solid #6705a8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #6705a8;
+            color: white;
+        }
+
+        .recommendation-heading {
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.968);
+            margin-bottom: 10px;
+        }
+        .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: white;
+    }
+
+    .contact-info h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .contact-info p {
+        margin: 5px 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-info p img {
+        margin-right: 10px;
+        width: 18px;  /* Adjust size based on your icons */
+        height: auto;
+    }
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 999; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+
+    .modal-content {
+        background-color: rgb(244, 125, 230);
+        margin: 15% auto; 
+        padding: 20px;
+        border: 3px solid darkpurple;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    .modal-content button {
+        background-color: rgb(255, 255, 255);
+        color: violet;
+        border: 2px solid rgb(152, 16, 152);
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .modal-content button:hover {
+        background-color: violet;
+        color: white;
+    }
+    /* Arrow Icon */
+.arrow-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6705a8;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-icon img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+.arrow-icon a {
+    text-decoration: none;
+    color: white;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header with Name, Email, Phone -->
+    <div class="header">
+        <div class="contact-info">
+            <h1>Jane Doe</h1>
+            <p><img src="icons8-email-50.png" alt="Email Icon"> jane.doe@email.com</p>
+            <p><img src="icons8-phone-50.png" alt="Phone Icon"> +123 456 7890</p>
+        </div>
+
+        <!-- Navigation Bar aligned vertically in the middle -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-image">
+            <img src="27470336_7294793.jpg" alt="Jane Doe">
+        </div>
+        <div class="about-content">
+            <h2>Hi, I'm Jane Doe!</h2>
+            <p>I'm a web developer with over 3 years of experience in building and designing user-friendly websites. I specialize in front-end development using HTML, CSS, and JavaScript, but I also have a good grasp of back-end technologies.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 style="color: #6705a8; margin-left: 20px;">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <img src="download (9).jpeg" alt="HTML">
+                <h3>CSS</h3>
+                <p>4 years experience</p>
+            </div>
+            <div class="skill-box">
+                <img src="download (1).png" alt="HTML">
+                <h3>JavaScript</h3>
+                <p>6 years experience</p>
+            </div>
+            <div class="skill-box">
+                <img src="download (2).png" alt="HTML">
+                <h3>AWS</h3>
+                <p>1 years experience</p>
+            </div>
+            <div class="skill-box">
+                <img src="download (3).png" alt="HTML">
+                <h3>Golang</h3>
+                <p>2 years experience</p>
+            </div>
+            <div class="skill-box">
+                <img src="download (4).png" alt="HTML">
+                <h3>Mongo DB</h3>
+                <p>3 years experience</p>
+            </div>
+            <div class="skill-box">
+                <img src="download.png" alt="HTML">
+                <h3>HTML</h3>
+                <p>3 years experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 style="color: #6705a8; margin-left: 20px;">Projects</h2>
+        <div class="project-box">
+            <h3>Chatbot Project</h3>
+            <ul>
+                <li>Built a chatbot using natural language processing (NLP) techniques to improve customer interactions.</li>
+            </ul>
+        </div>
+        <div class="project-box">
+            <h3>Web App Development</h3>
+            <ul>
+                <li>Created a full-stack web application using React and Node.js for an e-commerce platform.</li>
+            </ul>
+        </div>
+        <div class="project-box">
+            <h3>API Development</h3>
+            <ul>
+                <li>Developed a RESTful API for managing user data, with secure authentication mechanisms.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations">
+        <h2 style="color: #6705a8; margin-left: 20px; margin-top: 150px;">Recommendations</h2>
+        <div class="recommendations-container">
+            <div class="recommendation-box">
+                <p>"Jane is an exceptional developer with great problem-solving skills."</p>
+            </div>
+            <div class="recommendation-box">
+                <p>"Her attention to detail and work ethic are second to none."</p>
+            </div>
+            <div class="recommendation-box">
+                <p>"A pleasure to work with, Jane consistently delivers high-quality work on time."</p>
+            </div>
+            
+            
+        </div>
+        
+
+        <!-- Recommendation Form -->
+        <div class="form-container">
+            <div class="recommendation-heading">Leave a Recommendation</div>
+            <form id="recommendationForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="message" placeholder="Your Recommendation" required></textarea>
+                <button type="button" onclick="submitRecommendation()">Submit</button>
+            </form>
+
+        </div>
+        <div id="popupModal" class="modal">
+            <div class="modal-content">
+                <p>Thanks for leaving a recommendation!</p>
+                <button id="closePopup" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+        <!-- Arrow Icon -->
+<div class="arrow-icon">
+    <a href="#home"><img src="icons8-up-arrow-50.png" alt="Arrow Icon"></a>
+</div>
+
+    </section>
+
+    <script>
+        function submitRecommendation() {
+            // Show the modal when the form is submitted
+            document.getElementById("popupModal").style.display = "block";
+        }
+    
+        function closePopup() {
+            // Close the modal
+            document.getElementById("popupModal").style.display = "none";
+        }
+    
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById("popupModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>
